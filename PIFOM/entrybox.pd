@@ -1,0 +1,91 @@
+#N canvas 646 56 986 699 10;
+#X obj 189 115 entry 130 130 grey70 black;
+#X msg 189 83 clear;
+#X obj 342 154 select return;
+#X obj 382 402 select A B C D E F G H I J K L M N O P Q R S T U V W
+X Y Z;
+#X obj 435 320 list append;
+#X obj 395 461 bng 15 250 50 0 empty empty G 17 7 0 10 -262144 -1 -1
+;
+#X obj 435 462 bng 15 250 50 0 empty empty E 17 7 0 10 -262144 -1 -1
+;
+#X obj 519 462 bng 15 250 50 0 empty empty R 17 7 0 10 -262144 -1 -1
+;
+#X obj 475 462 bng 15 250 50 0 empty empty O 17 7 0 10 -262144 -1 -1
+;
+#X obj 778 428 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 427 269 list split 1;
+#X symbolatom 314 380 10 0 0 0 - - -;
+#X obj 408 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 427 358 pipe 1000;
+#X obj 189 52 trigger bang bang;
+#X text 342 170 listen for return key to output;
+#X text 513 270 split off the first letter...;
+#X text 512 319 save the rest of the letters as a new list;
+#X text 492 358 send the new list back to be split after 1 second;
+#X obj 396 634 osc~;
+#X msg 396 524 60;
+#X msg 431 524 63;
+#X msg 468 524 66;
+#X msg 506 524 69;
+#X obj 396 583 mtof;
+#X obj 396 712 *~;
+#X obj 397 745 output~;
+#X obj 449 691 line~;
+#X obj 516 634 delay 500;
+#X msg 516 660 0 250;
+#X obj 449 585 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 427 52 G E O R G E;
+#X text 509 50 click this message to test;
+#X text 544 522 assign bangs to midi notes;
+#X msg 449 634 100 250;
+#X text 232 674 synth stuff to make sound;
+#X text 278 764 pump up the volume;
+#X text 553 461 you don't need these bangs you can connect the select
+outputs directly to numbers;
+#X text 218 401 each letter is caught here and a bang is sent;
+#X connect 0 0 10 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 14 0;
+#X connect 3 4 6 0;
+#X connect 3 6 5 0;
+#X connect 3 14 8 0;
+#X connect 3 17 7 0;
+#X connect 3 26 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 20 0;
+#X connect 6 0 21 0;
+#X connect 7 0 23 0;
+#X connect 8 0 22 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 10 0 3 0;
+#X connect 10 1 4 1;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 0;
+#X connect 14 1 0 0;
+#X connect 19 0 25 0;
+#X connect 20 0 24 0;
+#X connect 20 0 30 0;
+#X connect 21 0 24 0;
+#X connect 21 0 30 0;
+#X connect 22 0 24 0;
+#X connect 22 0 30 0;
+#X connect 23 0 24 0;
+#X connect 23 0 30 0;
+#X connect 24 0 19 0;
+#X connect 25 0 26 0;
+#X connect 25 0 26 1;
+#X connect 27 0 25 1;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 30 0 34 0;
+#X connect 30 0 28 0;
+#X connect 31 0 10 0;
+#X connect 34 0 27 0;
+#X coords 0 0 1 1 85 60 0;

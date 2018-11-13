@@ -1,0 +1,39 @@
+#N canvas 156 141 506 311 10;
+#X obj 158 33 inlet~;
+#X obj 202 33 inlet;
+#X obj 158 130 *~;
+#X text 203 14 crossfade;
+#X obj 70 33 inlet~;
+#X obj 70 130 *~;
+#X obj 143 159 +~;
+#X obj 143 188 outlet~;
+#X text 143 207 right;
+#X obj 264 33 inlet;
+#X text 270 13 depth;
+#X obj 304 33 loadbang;
+#X obj 173 107 sin;
+#X obj 85 107 cos;
+#X obj 202 85 expr (pow(2*$f1-1 \, $f2*2-1)+1)/4*3.14159;
+#X text 214 110 Crossfade should be on a scale of \; 0 for all the
+way first signal to \; 1 for all the way second signal;
+#X obj 264 59 f 1;
+#X text 272 163 Depth should be a positive integer \; If you set it
+to a fraction \, very \; strange things may happen. \; If you set it
+negative \, even \; stranger things may happen. \; And not strange
+in some cool neat \; form \, just stuff like it fading \; from the
+left input back to the \; left input again.;
+#X text 68 15 1;
+#X text 159 14 2;
+#X connect 0 0 2 0;
+#X connect 1 0 14 0;
+#X connect 2 0 6 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 9 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 2 1;
+#X connect 13 0 5 1;
+#X connect 14 0 12 0;
+#X connect 14 0 13 0;
+#X connect 16 0 14 1;

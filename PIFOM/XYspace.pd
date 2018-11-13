@@ -1,0 +1,10 @@
+#N canvas 189 100 362 316 10;
+#X obj 26 43 grid1;
+#X obj 26 17 inlet;
+#X obj 239 16 inlet;
+#X obj 26 272 outlet;
+#X obj 239 271 outlet;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;

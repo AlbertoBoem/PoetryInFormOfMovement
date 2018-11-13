@@ -1,0 +1,36 @@
+#N canvas 0 22 842 579 10;
+#X obj 96 58 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 10 -262144
+-1 -1 0 1;
+#X floatatom 37 159 5 0 0 0 - - -;
+#X floatatom 138 157 5 0 0 0 - - -;
+#X obj 22 182 *~;
+#X obj 123 181 *~;
+#X text 205 138 1 - 1 = 0;
+#X text 201 155 recieves a value of 1 when the fader is to the right
+;
+#X text 199 175 recieves a value of 1 when the fader is to the left.
+;
+#X text 204 90 you need to bang the left output of [- ] for pd to work
+it out. So \, i like to use a highly unlikely number so it always bangs.
+;
+#X obj 93 85 select 2;
+#X msg 138 110 1;
+#X obj 138 134 -;
+#X obj 22 86 inlet~;
+#X obj 22 208 outlet~;
+#X obj 123 208 outlet~;
+#X obj 93 31 inlet;
+#X text 242 56 0 \, 1 oppure -1 \, 1;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 0 0 11 1;
+#X connect 1 0 3 1;
+#X connect 2 0 4 1;
+#X connect 3 0 13 0;
+#X connect 4 0 14 0;
+#X connect 9 1 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 12 0 4 0;
+#X connect 15 0 0 0;
